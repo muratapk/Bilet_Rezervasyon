@@ -1,0 +1,90 @@
+﻿@model IEnumerable<Bilet_Rezervasyon.Models.Bilet>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MusteriId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BTarih)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BSaati)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PNR)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Koltuk)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BSayi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gecer_Sure)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BiletDurum)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sefer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Personel)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MusteriId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BTarih)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BSaati)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PNR)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Koltuk)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BSayi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gecer_Sure)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BiletDurum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sefer.SeferId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Personel.PersonelId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.BiletId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.BiletId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.BiletId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

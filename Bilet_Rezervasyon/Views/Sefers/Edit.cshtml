@@ -1,0 +1,65 @@
+﻿@model Bilet_Rezervasyon.Models.Sefer
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>Sefer</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="SeferId" />
+            <div class="form-group">
+                <label asp-for="AcentaId" class="control-label"></label>
+                <select asp-for="AcentaId" class="form-control" asp-items="ViewBag.AcentaId"></select>
+                <span asp-validation-for="AcentaId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SeferAdi" class="control-label"></label>
+                <input asp-for="SeferAdi" class="form-control" />
+                <span asp-validation-for="SeferAdi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SeferKodu" class="control-label"></label>
+                <input asp-for="SeferKodu" class="form-control" />
+                <span asp-validation-for="SeferKodu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Gidis" class="control-label"></label>
+                <input asp-for="Gidis" class="form-control" />
+                <span asp-validation-for="Gidis" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Donus" class="control-label"></label>
+                <input asp-for="Donus" class="form-control" />
+                <span asp-validation-for="Donus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ucreti" class="control-label"></label>
+                <input asp-for="Ucreti" class="form-control" />
+                <span asp-validation-for="Ucreti" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Saati" class="control-label"></label>
+                <input asp-for="Saati" class="form-control" />
+                <span asp-validation-for="Saati" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

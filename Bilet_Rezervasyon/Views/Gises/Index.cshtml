@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Bilet_Rezervasyon.Models.Gise>
+<!--bilet rezervasyondaki model içindeki Gise tablosun liste olarak IEnumerable sıralı liste olarak getir-->
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.GiseAd)
+                <!--veri tabanında gelen model içindeki GiseAd verisi çek diyor isim olarak-->
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.GiseAd)
+                <!--veri tabanındaki verileri foreach metodu ile tek tablo içindeki satıra doldur-->
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.GiseId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.GiseId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.GiseId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

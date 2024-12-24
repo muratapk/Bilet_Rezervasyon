@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Bilet_Rezervasyon.Models.KartBilgi>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.KartNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KartSahibi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SonTarih)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cvc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Musteri)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.KartNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KartSahibi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SonTarih)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cvc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Musteri.MusteriId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.KartId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.KartId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.KartId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
