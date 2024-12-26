@@ -9,7 +9,7 @@ namespace Bilet_Rezervasyon.Models
 
 
         [Required(ErrorMessage ="TC No Boş Bırakılamaz")]
-        [StringLength(11,ErrorMessage ="TC.No 11 Karakter Olmaz Zorunda")]
+       
         [Display(Name ="T.C. Kimlik Numarası")]
         public int ? TcNo { get; set; }
         public string AdSoyad { get; set; } = string.Empty;

@@ -48,7 +48,7 @@ namespace Bilet_Rezervasyon.Controllers
         // GET: Personels/Create
         public IActionResult Create()
         {
-            ViewData["GiseId"] = new SelectList(_context.Gises, "GiseId", "GiseId");
+            ViewData["GiseId"] = new SelectList(_context.Gises, "GiseId", "GiseAd");
             return View();
         }
 
@@ -65,7 +65,7 @@ namespace Bilet_Rezervasyon.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["GiseId"] = new SelectList(_context.Gises, "GiseId", "GiseId", personel.GiseId);
+            ViewData["GiseId"] = new SelectList(_context.Gises, "GiseId", "GiseAd", personel.GiseId);
             return View(personel);
         }
 
@@ -82,7 +82,7 @@ namespace Bilet_Rezervasyon.Controllers
             {
                 return NotFound();
             }
-            ViewData["GiseId"] = new SelectList(_context.Gises, "GiseId", "GiseId", personel.GiseId);
+            ViewData["GiseId"] = new SelectList(_context.Gises, "GiseId", "GiseAd", personel.GiseId);
             return View(personel);
         }
 

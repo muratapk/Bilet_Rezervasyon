@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace Bilet_Rezervasyon.Models
 {
@@ -6,12 +7,26 @@ namespace Bilet_Rezervasyon.Models
     {
         [Key]
         public int SeferId { get; set; }
+        [DisplayName("ACENTA ADI")]
+        [Required(ErrorMessage ="ACENTA ADI SEÇİNİZ:")]
         public int AcentaId { get; set; }
-        public string SeferAdi { get; set; } = string.Empty;  
+        [DisplayName("SEFER ADI")]
+        [Required(ErrorMessage = "SEFER ADI GİRİNİZ:")]
+        public string SeferAdi { get; set; } = string.Empty;
+        [DisplayName("SEFER KODU")]
+        [Required(ErrorMessage = "SEFER KODU GİRİNİZ:")]
         public int SeferKodu { get; set; }
+        [DisplayName("GİDİŞ YERİ")]
+        [Required(ErrorMessage = "GİDİŞ YERİ GİRİNİZ:")]
         public string Gidis { get; set; } = string.Empty;
+        [DisplayName("DÖNÜŞ YERİ")]
+        [Required(ErrorMessage = "DÖNÜŞ YERİ GİRİNİZ:")]
         public string Donus { get; set; } = string.Empty;
-        public decimal ? Ucreti{get;set;} 
+        [DisplayName("BİLET ÜCRETİ")]
+        [Required(ErrorMessage = "BİLET ÜCRETİ GİRİNİZ:")]
+        public decimal ? Ucreti{get;set;}
+        [DisplayName("SEFER SAATİ")]
+        [Required(ErrorMessage = "SEFER SAATİ GİRİNİZ:")]
         public TimeOnly ? Saati { get; set; }
         virtual public Acenta ? Acenta { get; set; }
         //bir acentan bir sefer

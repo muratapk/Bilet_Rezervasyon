@@ -49,8 +49,9 @@ namespace Bilet_Rezervasyon.Controllers
         // GET: Bilets/Create
         public IActionResult Create()
         {
-            ViewData["PersonelId"] = new SelectList(_context.Personel, "PersonelId", "PersonelId");
-            ViewData["SeferId"] = new SelectList(_context.Sefers, "SeferId", "SeferId");
+            ViewData["MusteriId"] = new SelectList(_context.Musteri, "MusteriId", "AdSoyad");
+            ViewData["PersonelId"] = new SelectList(_context.Personel, "PersonelId", "AdSoyad");
+            ViewData["SeferId"] = new SelectList(_context.Sefers, "SeferId", "SeferAdi");
             return View();
         }
 

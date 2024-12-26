@@ -20,4 +20,19 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.7" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\Home\img\.DS_Store" />
+    <None Include="wwwroot\Home\img\blog\.DS_Store" />
+    <None Include="wwwroot\Home\img\elements\.DS_Store" />
+    <None Include="wwwroot\Home\scss\.DS_Store" />
+    <None Include="wwwroot\Home\scss\bootstrap\.DS_Store" />
+    <None Include="wwwroot\Home\scss\theme\.DS_Store" />
+    <None Include="wwwroot\Home\Travel - Doc\.DS_Store" />
+    <None Include="wwwroot\Home\Travel - Doc\css\.DS_Store" />
+    <None Include="wwwroot\Home\Travel - Doc\fonts\.DS_Store" />
+    <None Include="wwwroot\Home\Travel - Doc\img\.DS_Store" />
+    <None Include="wwwroot\Home\Travel - Doc\js\.DS_Store" />
+    <None Include="wwwroot\Home\Travel - Doc\syntax-highlighter\.DS_Store" />
+  </ItemGroup>
+
 </Project>

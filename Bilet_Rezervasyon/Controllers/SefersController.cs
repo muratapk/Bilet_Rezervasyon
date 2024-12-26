@@ -48,7 +48,8 @@ namespace Bilet_Rezervasyon.Controllers
         // GET: Sefers/Create
         public IActionResult Create()
         {
-            ViewData["AcentaId"] = new SelectList(_context.Acenta, "AcentaId", "AcentaId");
+            ViewData["AcentaId"] = new SelectList(_context.Acenta, "AcentaId", "AcentaAd");
+            //veritabanındaki Acenta kısmından AcentaId ve AcentaName
             return View();
         }
 
@@ -65,11 +66,11 @@ namespace Bilet_Rezervasyon.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["AcentaId"] = new SelectList(_context.Acenta, "AcentaId", "AcentaId", sefer.AcentaId);
+            ViewData["AcentaId"] = new SelectList(_context.Acenta, "AcentaId", "AcentaAd", sefer.AcentaId);
             return View(sefer);
         }
 
-        // GET: Sefers/Edit/5
+        // GET: Sefers/Edit/5 linkle gelen methodu
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -82,7 +83,7 @@ namespace Bilet_Rezervasyon.Controllers
             {
                 return NotFound();
             }
-            ViewData["AcentaId"] = new SelectList(_context.Acenta, "AcentaId", "AcentaId", sefer.AcentaId);
+            ViewData["AcentaId"] = new SelectList(_context.Acenta, "AcentaId", "AcentaAd", sefer.AcentaId);
             return View(sefer);
         }
 
